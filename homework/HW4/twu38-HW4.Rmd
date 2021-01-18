@@ -1,0 +1,49 @@
+---
+title: "twu38-HW4"
+author: "Tianqi Wu"
+date: "10/31/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Problem 1
+
+Display network targets by certain types of people of certain contexts. First, we can obtain user's past search queries. Then, we can use Simrank to find similar queries to rewrite those queries. Finally, we can use the rewrote queries to display relevant ads.
+
+# Problem 2
+
+$\lambda_2$ and $\lambda_3$ are regularization parameters which can shrunk the average. They also serve as smoothing factors that reduce bias when the number of users or items is small. They are often determined by cross validation.
+
+# Problem 3
+
+One latent factor is equivalent to a most-popular recommender. As number of latent factors increase, personalization and model quality would be improved until it overfits. We can determine the number of latent factors by line search or grid search that gives optimal training and test accuracy.
+
+# Problem 4
+
+The missing values pattern is not random since people tend to rate items that impress them. With binary dense view, the model characterises which items users rated, rather than how they rated. User factors are indirectly defined by item factors and we can identify the co-association relationships between users and items. The model would be better at predicting users' preference and more robust when calculating bias. By integrating the rating model and dense binary view, the model is able to produce a 7% improvement.
+
+\newpage
+# Problem 5
+Pearson correlation 
+```{r, echo=FALSE}
+library(knitr)
+user = c('15','15','19','20','21')
+item = c('7','177','921','1089','1393')
+score = c('3.3','2.6','2.5','4.6','2.5')
+data = data.frame(user,item,score)
+kable(data)
+```
+
+Content similarity
+```{r, echo=FALSE}
+library(knitr)
+user = c('15','15','19','20','21')
+item = c('7','177','921','1089','1393')
+score = c('2.3','2.2','3.8','3.7','3.3')
+data = data.frame(user,item,score)
+kable(data)
+```
+

@@ -1,0 +1,50 @@
+---
+title: "twu38-HW5"
+author: "Tianqi Wu"
+date: "11/14/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Problem 1
+
+Homophily refers to the tendency for people to associate and bond with similar others in socially significant ways. By identifying similar social groups, advertisers are able to better predict users' behaviors and provide personalized and effective recommendations. Hence, it is important in behavioral targeting that uses social information.
+
+#Problem 2
+
+##2.1
+Computer hardware/notebooks is a very personal choice and highly depends on users' need. We cannot assume that friends use the same notebooks. People like video games tend to use notebooks with more support on games. People learning programming tend to use notebooks suitable for coding. Different preference of notebooks does not prevent people becoming friends. Hence, in this case, using social information is likely to yield poorer results.
+
+##2.2
+Friends usually share similar hobbies like sports. It is very likely for one to click on an sport ad if his friends also clicked on it. Since sports itself is a kind of social activities, it is very normal to infer friends would play the same sports. In this case, using social  information is going to be very valuable.
+
+##2.3
+Hispanic has especially strong social identities and bond. In this case, whether or not a friend has clicked on the ad becomes very crucial. The likelihood of clicking on the display ads would boost a lot even there is only one friend clicked on it as well. Also, it is likely that one would recommend the ad to others for Hispanic targeting.
+
+#Problem 3
+Long term interests persist. The benefit of focusing on long-term interest needs time to show since it leaves users with impression even the user may not make purchase right away. I would focus more on short term interests although they may change a lot over time.  We could immediately see the effectiveness of ads if we can provide precise recommendations that users are interested in currently. People would usually make purchase for their short term interests and it is very important to let the users see the ads when they are still interested in. As an advertiser, I would focus on short term interests if I want to make profits in relatively short time period and focus on long term interests otherwise.
+
+#Problem 4
+##4.1
+###positive
+
+* High bar entry guarantees the quality of ads. Advertisers would make efforts to provide ads with good quality and contents. It usually leads to high clickthourgh rate and users are likely to spend more time on websites with good ads.
+
+* Since the advertising is based on contract, Stack Exchange could certainly expect the revenues coming from the contracts. Advertisers could also lock their preferred ad slots for certain period of time.
+
+###negative
+
+* Since there is high bar entry, many advertisers with good ads and low budgets are prevented from getting the slots.
+
+* It is not as flexible as real time bidding. Click through rate of the ads would vary over time and both advertisers and Stack Exchange are not able to make adjustments. Stack Exchange may also lose the chance to earn more money if other advertisers are willing to pay higher prices.
+
+##4.2
+Micro-targeting could be a negative development for vulnerable consumers. Since the elderly and children could easily get misguided and it is hard for them to tell if the information provided by the ads are right or wrong. It is easy for them to trust the ads and make purchase even if the ads are misleading. Also, some contents may be inappropriate for them and they could get mental illness. 
+Ads would be very effective for vulnerable consumers and advertisers would easily make money off them. In this case, regulation, monitoring and control are especially important. Filtering out inappropriate ads is needed in the first place. Then, micro-targeting could be positive development since it is able to identify the specific need for those vulnerable consumers.
+
+
+##4.3
+I believe Facebook should ban all political ads. Facebook should not be a place for political manipulation through micro-targeting. The political ads could be biased and only the targeted users see them. Unlike biased and fake news which all people are able to see, micro-targeting political ads is unfair in this case. It is not right to affect one's political perspective with micro-targeting ads. Especially for those vulnerable consumers, they are particularly easy to be affected and it is certainly a negative development.

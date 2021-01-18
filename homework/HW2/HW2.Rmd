@@ -1,0 +1,125 @@
+---
+title: "CS498 HW2"
+author: "Tianqi Wu"
+date: "10/3/2019"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Question 1
+
+##(a)
+If there are two bidders:
+
+```{r, echo=FALSE}
+library(knitr)
+Values = c('(0,0)','(1,0)','(0,1)','(1,1)')
+Probability = c('1/4','1/4','1/4','1/4')
+Sell_price = c('0','0','0','1')
+Expected_revenue = c('0','0','0','1/4')
+data = data.frame(Values,Probability,Sell_price,Expected_revenue)
+kable(data)
+```
+
+Adding up the expected revenue gives 1/4. Hence, the seller's expected revenue is 1/4.
+
+##(b)
+If there are three bidders:
+```{r, echo=FALSE}
+Values = c('(0,0,0)','(0,0,1)','(0,1,0)','(0,1,1)','(1,0,0)','(1,0,1)','(1,1,0)','(1,1,1)')
+Probability = c('1/8','1/8','1/8','1/8','1/8','1/8','1/8','1/8')
+Sell_price = c('0','0','0','1','0','1','1','1')
+Expected_revenue = c('0','0','0','1/8','0','1/8','1/8','1/8')
+data = data.frame(Values,Probability,Sell_price,Expected_revenue)
+kable(data)
+```
+
+Adding up the expected revenue gives 4/8. Hence, the seller's expected revenue is 1/2.
+
+##(c)
+We only need more than one bidder having private value of 1 in the auction in order to let the seller get revenue of 1. Since the probability of the bidder having private value of 1 is 1/2, as the number of bidders increase, more bidders with private value of 1 will exist in the auction. 
+
+In fact, if there are n bidders, only when there are at least n-1 bidders with private values of 0, the seller would get revenue of 0. There are $n \choose 1$ + $n \choose 0$ ways for this event to happen. In total, there are $2^n$ events.
+
+Hence, the epected revenue of the seller is: $1*(1 - \frac{{n\choose 1}+{n\choose 0}}{2^n}) = 1 - \frac{n+1}{2^n}$. As n goes to infinity, the expected renvenue of the seller goes to 1.
+
+# Question 2
+
+## VCG
+The socially optimal allocation would be advertiser x gets slot a, y gets slot b and z gets slot c.
+
+```{r, echo=FALSE}
+a = c('24','12','6')
+b = c('20','10','5')
+c = c('4','2','1')
+data = data.frame(a,b,c)
+row.names(data) = c('x','y','z')
+kable(data)
+```
+
+First, in the optimal matching without buyer x present, buyer y gets item a and buyer
+z gets item b. This improves the respective valuations of y and z for their assigned
+items by 12 - 10 = 2 and 5 - 1 = 4 respectively. The total harm caused by x is
+therefore 2 + 4 = 6, and so this is the VCG price(6/6=1 per click) for x getting slot a.
+
+In the optimal matching without buyer y present, buyer x still gets a (so she is unaffected), while buyer z gets item b, for an improved valuation of 5 - 1 = 4. The total harm
+caused by y is 0 + 4 = 4, and so this is VCG price(4/5 per click) for y getting slot b.
+
+Finally, in the optimal matching without buyer z present, buyers x and y each get the
+same items they would have gotten had z been there. z causes no harm to the rest of
+the world, and so her VCG price is 0.
+
+## GSP
+GSP procedure awards each slot i to the ith highest bidder, at a price per click equal to the (i + 1)st highest bid.
+
+###If truthful bidding (bidder bids what he values):
+The socially optimal allocation is that advertiser x gets slot a at price of 2 per click,
+advertiser y gets slot b at price of 1 per click and advertiser z gets slot c at price of 0 per click.
+
+###If not truthful bidding:
+Since the market-clearing price for slot a,b,c are 6,4,0. We can translate it back to price per click by dividing the clickthrough rate: this produces a price per click of 6/6 = 1 for the first slot, 4/5 for the second slot and 0 for the third slot.
+
+Then, the bids for advertiser y and z are 1 and 4/5 per click for slot a and b. The bid of x can be anything as long as it's more than 1. With these bids, x pays 1 per click for the first slot, y pays 4/5 per click for the second slot, and z pays 0 per click for the third slot - and the allocation of advertisers to slots is socially optimal.
+
+\newpage 
+
+# Question 3
+
+##(a)
+Buyer a would win the auction and he will pay price of 3.
+
+##(b)
+The allocation is buyer a gets item x and buyer b and buyer c get (fictional) items y and z.
+
+First, in the optimal matching without buyer a present, buyer b gets item x and buyer
+c gets (fictional) items y. This improves the respective valuations of b and c for their assigned items by 3 - 0 = 3 and 0 - 0 = 0 respectively. The total harm caused by a is
+therefore 3, and so this is the VCG price for a getting item x.
+
+In the optimal matching without buyer b present, buyers a still gets item x and buyer c gets (fictional) item y or z. b causes no harm to the rest of the world, and so her VCG price is 0.
+
+Finally, in the optimal matching without buyer c present, buyers a still gets item x and buyer b gets (fictional) item y or z. Buyer c causes no harm to the rest of the world, and so her VCG price is 0.
+
+If buyer a is not present, buyer b would get item x with price of 3 and buy c would get fictional item with price 0. If buyer a is present, buyer b and c would get fictional item y and z since they lose the auction. Since buyer b loses value of 3, this the harm that buyer a causes to the remaining bidders by taking the item he is assigned. Since it is second- price single-item auction, it is a special case of VCG.
+
+
+# Question 4
+
+##(a)
+
+For the advantages of this approach, first, it is easier for non-experts to set-up as you just need to install the light-weight extention. Most importantly, it is able to provide protection against aggregation and profiling of individual search queries by masking the true queries with some other generated decoy queries.
+
+For the limitations, first, it could not prevent identification via the IP addresses logged by search engines with every query since TMN is not designed to mask IP address. Users may try other proxy-based solutions to meet their need.
+
+Second, it may generate some extreme, unwelcome queries that are not suitable to display in the search history. This can be solved by optimizing the hot query list. 
+
+Also, the true user queries may be detected and filtered out. It may improve by optimizing the diversity and quality of the decoy queries to make it harder to distinguish.
+
+##(b)
+
+Cookie synchronization allows third-party websites to share and exchange information of users by mapping the unique IDs. To avoid the amount of private information made available to trackers, we may examine the cookies when browsing. Since cookies are domain specific, we can easily tell if the cookies are from the first-party or third-party. We may block or delete these third-party cookies after browsing the websites. Then, we are able to protect our private information. Also, we may browse in incognito mode so that the cookies would be not stored after the session ends. We may also change the location information to obfuscate the trackers.

@@ -1,0 +1,43 @@
+---
+title: "CS498-HW3"
+author: "Tianqi Wu"
+date: "10/16/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Problem 1
+
+Search network let advertisers to display ads next to the search results. The auction mainly depends on clients' bids and the quality of ad. An advertiser pays no more than what's required to rank higher than the next best ad, or to clear the auction floor.
+
+Display network let advertisers to display ads in particular contexts, audiences, locations and more. For the auction, an advertiser pays that price only for incremental clicks they generate from being in their current position and pays the next highest ranking ad's price for the rest of the clicks. Also, the Google Display Network may add a service fee to the closing auction price  for audience targeting.
+
+# Problem 2
+
+First, items(paintings) have some intrinsic (common) values and may be resold after the auction but ad slots do not. Second, the auction prices of the paintings are vague since they are largely depend on the preference of buyers but ad slots are more substitutable and auction price may be calculated more clearly. For VCG auction, the harm that buyers for paintings suffer is likely to be larger than the harm that advertisers suffer. Also, advertisers usually only need one ad slot to display on one network and may not buy all three ad slots. However, it is possible that buyers like all three paintings and buy all the paintings in the same time.
+
+# Problem 3
+
+Users sometimes prefer ads that did not win the auction for a slot and one reason is that the ads may not be the most relevant to user's interest. Also, users may be attracted by the ads that are not in the best slots due to their personal preference. Even for similar products, products that win the auction may have higher prices to cover the cost for winning the auction.
+
+# Question 4
+
+First, the ad campaign may involve a lot of bid phrases and it is very laborious to manually choose them. Also, it is hard to choose all the potential bid phrases and some of them may not have direct bits on them. Users may be interested in the phrases that are similar to their search phrase, which are not bid phrases. Offering advertisers an opportunity to automatically generate bids on phrases help catch those potential bid phrases and make money for Google.
+
+\newpage
+# Question 5
+
+24481,76584,5786
+
+0,3,5
+
+24481,76584,5786
+
+10,3,5
+
+24481,76584,5786
+
+10,3,5
